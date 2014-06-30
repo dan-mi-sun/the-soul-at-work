@@ -1,0 +1,2 @@
+class Creative < User 
+end

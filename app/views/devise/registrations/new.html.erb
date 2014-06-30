@@ -12,6 +12,21 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+  <div><%= f.label :username %><br />
+    <%= f.text_field :username %> </div>
+
+  <div><%= f.label :birthday %><br />
+    <%= f.date_select(:birthday, { start_year: (120.years.ago).year, end_year: (18.years.ago).year }) %></div>
+
+    <p>"Which type of account would you like to start?"</p>
+    <div id="account-type">
+      <div><%= f.radio_button :type, "Buyer" %><br />
+        <%= f.label :type_buyer, "Buyer" %></div>
+
+      <div><%= f.radio_button :type, "Creative" %><br />
+        <%= f.label :type_creative, "Creative" %></div>
+    </div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
