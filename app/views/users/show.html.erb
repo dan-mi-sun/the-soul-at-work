@@ -1,0 +1,16 @@
+<div class="profile-page">
+<h3><%= @user.username %></h3>
+
+<%= image_tag(@user.avatar.url , class: "avatar") if @user.avatar? %>
+
+<ul>
+  <li>Account type: <%= @user.type %></li>
+  <li>Location: <%= @user.location %></li>
+  <li>Languages: <%= @user.languages %></li>
+  <li>Skills: <%= @user.skills %></li>
+</ul>
+
+<p><%= @user.about %></p>
+
+</div>
+
