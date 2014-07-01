@@ -7,5 +7,3 @@ Feature: Profile page
     Then We should see the user's username
       And We should see the user's about
       And We should see the user's location
-      And We should see the user's langauges
-      And We should see the user's skills

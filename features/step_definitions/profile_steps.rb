@@ -6,8 +6,6 @@ Given(/^a user exists$/) do
     :type => "Creative",
     :about => Faker::Lorem.paragraph,
     :location => Faker::Address.city,
-    :languages => "English",
-    :skills => "Ruby",
     :email => @email
     )
 end
@@ -34,12 +32,3 @@ end
 Then(/^We should see the user's location$/) do
   expect(page.has_content?(@user.location)).to be true
 end
-
-Then(/^We should see the user's langauges$/) do
-  expect(page.has_content?(@user.languages)).to be true
-end
-
-Then(/^We should see the user's skills$/) do
-  expect(page.has_content?(@user.skills)).to be true
-end
-
