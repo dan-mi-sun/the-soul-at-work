@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
    validates_uniqueness_of :username
    validates_presence_of :username
    validates_presence_of :type
+
+   has_many :expertise
+   has_many :skills, :through => :expertise
+
 end
