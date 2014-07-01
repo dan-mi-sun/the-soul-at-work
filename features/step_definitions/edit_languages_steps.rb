@@ -1,20 +1,35 @@
 Given(/^languages exist$/) do
-  pending # express the regexp above with the code you wish you had
+  @languages = ["French", "Greek", "Japanese", "Ruby"]
+  @languages.each do |l|
+    Language.create!(name: l)
+  end
 end
 
 Given(/^a user has languages$/) do
-  pending # express the regexp above with the code you wish you had
+  @user.languages(:language_ids => [0])
 end
 
 Given(/^the edit profile page has languages$/) do
-  pending # express the regexp above with the code you wish you had
+  @languages = Language.all
+  @languages.each do |l|
+    expect(page.has_content?(l.name)).to be true
+  end
 end
 
+
 When(/^they choose to add more than one language$/) do
-  pending # express the regexp above with the code you wish you had
+  select('Japanese', :from => 'user_language_ids')
+  select('Ruby', :from => 'user_language_ids')
+
 end
 
 Then(/^their profile should be updated$/) do
-  pending # express the regexp above with the code you wish you had
-end
+  @user.reload
+  counter = 0
+  @userlanguages = @user.languages.all
+  @userlanguages.each do |language|
+    counter+=1
+  end
+  expect(counter).to eq(2)
 
+end
