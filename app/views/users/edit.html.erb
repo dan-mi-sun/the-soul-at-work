@@ -25,6 +25,16 @@
   <%= f.file_field(:avatar, accept: 'image/png,image/gif.image/jpeg') %>
 <% end %>
 
+  <div id ="languages" class="form-section">
+    <h4>Languages</h4>
+    <%= collection_select(:user, :language_ids, @languages, :id, :name,{},{multiple:true}) %>
+  </div>
+
+  <div id ="skills" class="form-section">
+    <h4>Skills</h4>
+    <%= collection_select(:user, :skill_ids, @skills, :id, :name,{},{multiple:true}) %>
+  </div>
+
   <%= submit_tag "Update" %>
 
 <% end %>

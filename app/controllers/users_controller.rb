@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   def edit 
     @user = current_user
+    @languages = Language.all
+    @skills = Skill.all
   end
 
   def update
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
 
   private
   def allowed_params
-    params.require(:user).permit(:username, :type, :birthday, :location,
-                                :about, :avatar)
+    params.require(:user).permit(:username, :type, :birthday, :location, :about, :avatar,
+                                :language_ids => [], :skill_ids => [] )
   end
 end

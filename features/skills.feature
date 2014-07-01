@@ -8,8 +8,7 @@ Feature: Skills
       And the user is on the edit profile page
       And the edit profile page has skills
 
-  @wip
   Scenario: Add skills to user profile
     When they choose to add more than one skills
       And the user submits the form
-    Then their profile should be updated
+    Then Their profile should be updated

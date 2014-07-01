@@ -1,20 +1,33 @@
 Given(/^skills exist$/) do
-  pending # express the regexp above with the code you wish you had
+  @skills = %w( Ruby Javascript PHP Java)
+  @skills.each do |skill|
+    Skill.create!(name: skill)
+  end
 end
 
 Given(/^a user has skills$/) do
-  pending # express the regexp above with the code you wish you had
+  @user.skills(:skill_ids => [0])
 end
 
 Given(/^the edit profile page has skills$/) do
-  pending # express the regexp above with the code you wish you had
+  @skills = Skill.all
+  @skills.each do |skill|
+    expect(page.has_content?(skill.name)).to be true
+  end
 end
 
 When(/^they choose to add more than one skills$/) do
-  pending # express the regexp above with the code you wish you had
+  select('Ruby', :from => 'user_skill_ids')
+  select('Javascript', :from => 'user_skill_ids')
 end
 
-Then(/^their profile should be updated$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^Their profile should be updated$/) do
+  @user.reload
+  counter = 0
+  @expertise = @user.skills.all
+  @expertise.each do |skill|
+    counter+=1
+  end
+  expect(counter).to eq(2)
 end
 
