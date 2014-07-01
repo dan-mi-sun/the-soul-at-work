@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resource :user, :only => [] do
     member do
       get :me
+      get :edit
+      put :update, :as => :update_profile
     end
   end
 end
