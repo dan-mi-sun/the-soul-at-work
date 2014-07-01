@@ -9,4 +9,7 @@ describe User do
   it { should have_many(:expertise) }
   it { should have_many(:skills).through(:expertise) }
 
+  it { should have_many(:user_languages) }
+  it { should have_many(:languages).through(:user_languages) }
+
 end

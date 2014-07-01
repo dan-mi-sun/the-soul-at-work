@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
    has_many :expertise
    has_many :skills, :through => :expertise
 
+   has_many :user_languages
+   has_many :languages, :through => :user_languages
+
 end
