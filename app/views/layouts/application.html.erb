@@ -3,27 +3,31 @@
 <html>
 <head>
   <title>The Soul At Work</title>
+  <meta name="viewport" content="width=device-width, intial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <h1 class="navbar-brand">The Soul At Work</h1>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+        <li><%= link_to 'Edit Profile', edit_user_path %></li>
+        <li><%= link_to 'Forgotten Password', new_user_password_path %></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class='notice-parent'>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
-
-	<nav>
-		<h1 id="main-logo">The Soul At Work</h1>
-    <ul>
-      <li><%= link_to 'Sign up', new_user_registration_path %></li>
-      <li><%= link_to 'Sign in', new_user_session_path %></li>
-      <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-      <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
-      <li><%= link_to 'Edit Profile', edit_user_path %></li>
-      <li><%= link_to 'Forgotten Password', new_user_password_path %></li>
-    </ul>
-	</nav>
 
   <main>
   <%= yield %>
