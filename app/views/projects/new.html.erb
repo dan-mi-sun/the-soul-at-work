@@ -1,0 +1,27 @@
+<div class="">
+<h2>Add Project</h2>
+
+<%= form_for @project do |f| %>
+
+  <%= field_set_tag do %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  <% end %>
+
+  <%= field_set_tag do %>
+    <%= f.label :description %>
+    <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "about") %>
+  <% end %>
+
+  <%= field_set_tag do %>
+    <%= f.label :about %>
+    <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
+  <% end %>
+
+  <div><%= f.label :closing_date %><br />
+     <%= f.date_select(:closing_date, { start_year: (120.years.ago).year, end_year: (18.years.ago).year }) %></div>
+
+  <%= submit_tag "Update" %>
+
+<% end %>
+</div> 
