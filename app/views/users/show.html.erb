@@ -6,6 +6,16 @@
 <ul>
   <li>Account type: <%= @user.type %></li>
   <li>Location: <%= @user.location %></li>
+  <li>Skills:
+    <% @user.skills.each do |skill| %>
+      <%= skill.name %>
+    <% end %>
+  </li>
+  <li>Languages:
+    <% @user.languages.each do |language| %>
+      <%= language.name %>
+    <% end %>
+  </li>
 </ul>
 
 <p><%= @user.about %></p>

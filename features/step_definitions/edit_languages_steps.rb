@@ -33,3 +33,13 @@ Then(/^their profile should be updated$/) do
   expect(counter).to eq(2)
 
 end
+
+Then(/^when we visit their profile$/) do
+  visit me_user_path
+end
+
+Then(/^their choices should be displayed$/) do
+  page.should have_content("Ruby")
+  page.should have_content("Japanese")
+end
+
