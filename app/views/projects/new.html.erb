@@ -19,7 +19,7 @@
   <% end %>
 
   <div><%= f.label :closing_date %><br />
-     <%= f.date_select(:closing_date, { start_year: (120.years.ago).year, end_year: (18.years.ago).year }) %></div>
+     <%= f.date_select(:closing_date, { include_blank: true, start_year: Time.now.year, end_year: (Time.now.year + 13) }) %></div>
 
   <%= submit_tag "Update" %>
 
