@@ -5,8 +5,13 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    Project.create(params_for_project)
-    redirect_to root_path
+    @project = Project.new(params_for_project)
+    if @project.save
+      flash[:notice] = "Your project has been saved"
+      redirect_to new_project_path
+    else 
+      render :new
+    end
   end
 
   def update

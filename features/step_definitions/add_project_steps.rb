@@ -17,7 +17,7 @@ When(/^I complete the form with valid information$/) do
     select 'January'
   end
   within "#project_closing_date_1i" do
-    select '1960'
+    select '2015'
   end
   click_on "Update"
 end
@@ -25,4 +25,3 @@ end
 Then(/^a project should be created$/) do
   expect(Project.count).to eq(1)
 end
-

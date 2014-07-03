@@ -1,27 +1,34 @@
 <div class="">
-<h2>Add Project</h2>
 
-<%= form_for @project do |f| %>
+  <% if @project.errors.any? %>
+    <% @project.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  <% end %>
 
-  <%= field_set_tag do %>
+  <h2>Add Project</h2>
+
+  <%= form_for @project do |f| %>
+
+    <%= field_set_tag do %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+  <%= f.text_field :title %>
   <% end %>
 
   <%= field_set_tag do %>
     <%= f.label :description %>
-    <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "about") %>
+  <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "about") %>
   <% end %>
 
   <%= field_set_tag do %>
     <%= f.label :about %>
-    <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
+  <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
   <% end %>
 
   <div><%= f.label :closing_date %><br />
-     <%= f.date_select(:closing_date, { include_blank: true, start_year: Time.now.year, end_year: (Time.now.year + 13) }) %></div>
+    <%= f.date_select(:closing_date, { include_blank: true, start_year: Time.now.year, end_year: (Time.now.year + 13) }) %></div>
 
   <%= submit_tag "Update" %>
 
-<% end %>
+  <% end %>
 </div> 

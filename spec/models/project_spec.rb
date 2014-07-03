@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe Project do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should validate_presence_of(:title) }
+  it { should ensure_length_of(:title).is_at_least(4) }
+  it { should validate_presence_of(:description) }
+  it { should ensure_length_of(:description).is_at_least(10) }
+  it { should validate_presence_of(:about) }
+  it { should ensure_length_of(:about).is_at_least(10) }
+  it { should validate_presence_of(:closing_date) }
+
 end
