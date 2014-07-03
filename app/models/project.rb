@@ -8,4 +8,7 @@ class Project < ActiveRecord::Base
    validates_length_of :about, :minimum => 10, :allow_blank => false 
    validates_presence_of :closing_date
 
+   has_many :requisite_skills
+   has_many :skills, :through => :requisite_skills
+
 end
