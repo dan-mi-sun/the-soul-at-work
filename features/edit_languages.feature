@@ -12,3 +12,6 @@ Feature: Edit Languages
     When they choose to add more than one language
       And the user submits the form
     Then their profile should be updated
+    Then when we visit their profile
+    Then their choices should be displayed
+
