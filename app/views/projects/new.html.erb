@@ -1,12 +1,11 @@
 <div class="">
+  <h2>Add Project</h2>
 
   <% if @project.errors.any? %>
     <% @project.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
   <% end %>
-
-  <h2>Add Project</h2>
 
   <%= form_for @project do |f| %>
 
