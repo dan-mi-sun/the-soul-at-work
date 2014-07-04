@@ -1,28 +1,17 @@
-<div class="profile-page">
-  <h2>Add Project</h2>
+<div class="project-page edit">
+  <h2>Edit Project Page</h2>
 
-  <% if @project.errors.any? %>
-    <% @project.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  <% end %>
-
-  <%= form_for @project do |f| %>
+  <%= form_for :project, url: project_path(@project), :method => :put do |f| %>
 
     <%= field_set_tag do %>
-    <%= f.label :title %>
-  <%= f.text_field :title %>
-  <% end %>
-
-  <%= field_set_tag do %>
     <%= f.label :description %>
-  <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "about") %>
-  <% end %>
+  <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "description") %>
+<% end %>
 
   <%= field_set_tag do %>
     <%= f.label :about %>
   <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
-  <% end %>
+<% end %>
 
   <div><%= f.label :closing_date %><br />
     <%= f.date_select(:closing_date, { include_blank: true, start_year: Time.now.year, end_year: (Time.now.year + 13) }) %></div>
@@ -32,7 +21,7 @@
     <%= collection_select(:project, :skill_ids, @skills, :id, :name,{}, {multiple:true}) %>
   </div>
 
-  <%= submit_tag "Update" %>
+  <button type="submit" class="btn btn-default"><%= submit_tag "Update Project" %></button>
 
-  <% end %>
+<% end %>
 </div> 

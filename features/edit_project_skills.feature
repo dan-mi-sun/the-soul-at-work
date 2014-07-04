@@ -10,6 +10,6 @@ Feature: Edit Project Skills
 
   Scenario: Add skills to project
     When they choose to add more than one skill
-      And the user submits the form
-    Then Their profile should be updated
+      And they submit the form
+    Then the project should be updated
       And thier selection should be saved

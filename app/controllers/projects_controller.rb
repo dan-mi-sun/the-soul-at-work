@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @skills = Skill.all
   end
 
   def create
@@ -14,12 +15,24 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def show
+    @project = Project.find(params[:id])
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+    @skills = Skill.all
+  end
+
   def update
+    @project = Project.find(params[:id])
+    @project.update(params_for_project)
+    redirect_to root_path
   end
 
   private
   def params_for_project
-    params.require(:project).permit(:title, :description, :about, :closing_date)
+    params.require(:project).permit(:title, :description, :about, :closing_date, :skill_ids => [] )
   end
 
 end
