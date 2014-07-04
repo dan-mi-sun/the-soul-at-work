@@ -3,7 +3,7 @@ Given(/^a user exists$/) do
 
   @user = User.create!(:username => Faker::Name.first_name,
     :password => "password",
-    :type => "Creative",
+    :type => "Buyer",
     :about => Faker::Lorem.paragraph,
     :location => Faker::Address.city,
     :email => @email

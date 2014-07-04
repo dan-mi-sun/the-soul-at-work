@@ -7,6 +7,7 @@ Given(/^I choose to add a project$/) do
 end
 
 When(/^I complete the form with valid information$/) do
+ save_and_open_page 
   fill_in "Title", :with => Faker::Company.name
   fill_in "Description", :with => Faker::Company.catch_phrase
   fill_in "About", :with => Faker::Company.bs
