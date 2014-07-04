@@ -1,10 +1,11 @@
 Feature: Edit Project Skills
 
   Background: 
-    Given a project exists
+    Given a user exists
+      And a user signs in
+      And a project exists
       And skills exist
       And a project has skills
-      And a user signs in
       And the user is on the edit project page
       And the edit project page has skills
 

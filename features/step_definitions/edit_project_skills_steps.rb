@@ -2,7 +2,9 @@ Given(/^a project exists$/) do
   @project = Project.create!(:title => Faker::Company.name, 
                              :description => Faker::Company.catch_phrase,
                              :about => Faker::Company.bs,
-                             :closing_date => "2020-06-16")
+                             :closing_date => "2020-06-16",
+                             :buyer_id => @user.id
+                            )
 end
 
 Given(/^a project has skills$/) do
