@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def new
-    @project = Project.new
+    @project = Project.new(:buyer_id => current_user.id)
     @skills = Skill.all
   end
 
@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Your project has been saved"
       redirect_to new_project_path
     else 
+      @skills = Skill.all
       render :new
     end
   end
@@ -26,13 +27,18 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    @project.update(params_for_project)
-    redirect_to root_path
+    if  @project.update(params_for_project)
+      flash[:notice] = "Your project has been saved"
+      redirect_to new_project_path
+    else
+      @skills = Skill.all
+      render :new
+    end
   end
 
   private
   def params_for_project
-    params.require(:project).permit(:title, :description, :about, :closing_date, :skill_ids => [] )
+    params.require(:project).permit(:title, :description, :about, :closing_date, :buyer_id, :skill_ids => [])
   end
 
 end
