@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
    has_many :requisite_skills
    has_many :skills, :through => :requisite_skills
 
+   has_many :creatives, :class_name => "User", :through => :skills
+
    belongs_to :buyer
 
 end
