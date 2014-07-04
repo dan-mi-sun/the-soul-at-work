@@ -1,23 +1,32 @@
 <div class="profile-page">
-<h3><%= @user.username %></h3>
+<h3>Profile of <%= @user.username %></h3>
 
 <%= image_tag(@user.avatar.url , class: "avatar") if @user.avatar? %>
 
 <ul>
-  <li>Account type: <%= @user.type %></li>
-  <li>Location: <%= @user.location %></li>
+  <li>Account type: <b><%= @user.type %></b></li>
+  <li>Location: <b><%= @user.location %></b></li>
   <li>Skills:
     <% @user.skills.each do |skill| %>
-      <%= skill.name %>
+      <b><%= skill.name %>, </b>
     <% end %>
   </li>
   <li>Languages:
     <% @user.languages.each do |language| %>
-      <%= language.name %>
+      <b><%= language.name %>, </b>
     <% end %>
+  </li>
+  <li>Projects:
+    <% @user.projects.each do |project| %>
+    <%= project.title %>
+      <% if @user.id == current_user.id %>
+        <%= link_to "Edit Project", edit_project_path(project.id), class: "edit-project"  %>
+      <% end %>
+  <% end %>
   </li>
 </ul>
 
+<h4>About this <%= @user.type %></h4>
 <p><%= @user.about %></p>
 
 <% if @user.id == current_user.id %>

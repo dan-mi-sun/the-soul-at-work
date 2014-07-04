@@ -11,20 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703133048) do
+ActiveRecord::Schema.define(version: 20140704110438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "buyers", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "creatives", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "expertises", force: true do |t|
     t.datetime "created_at"
@@ -47,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140703133048) do
     t.date     "closing_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "buyer_id"
   end
 
   create_table "requisite_skills", force: true do |t|
