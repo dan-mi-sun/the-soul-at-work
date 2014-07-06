@@ -9,30 +9,37 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <h1 class="navbar-brand"><%= link_to 'The Soul At Work', root_path  %></h1>
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Start A Project', new_project_path  %></li>
-        <li><%= link_to 'Profile', me_user_path %></li>
-        <li><%= link_to 'Edit Profile', edit_user_path %></li>
-        <li><%= link_to 'Sign up', new_user_registration_path %></li>
-        <li><%= link_to 'Sign in', new_user_session_path %></li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-        <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
-        <li><%= link_to 'Forgotten Password', new_user_password_path %></li>
-      </ul>
+  <nav class="navbar navbar-fluid-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div class="container nav-collapse">
+          <ul class="nav">
+            <li><%= link_to 'Start A Project', new_project_path  %></li>
+            <li><%= link_to 'Profile', me_user_path %></li>
+            <li><%= link_to 'Edit Profile', edit_user_path %></li>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+            <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+            <li><%= link_to 'Forgotten Password', new_user_password_path %></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
 
   <div class='notice-parent'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <span class="notice alert-info"><%= notice %></span>
+    <span class="alert alert-warning"><%= alert %></span>
   </div>
 
   <main>
   <%= yield %>
   </main>
+
+  <footer>
+    <p>&copy; The Soul at Work 2014</p>
+  </footer>
 
 </body>
 </html>

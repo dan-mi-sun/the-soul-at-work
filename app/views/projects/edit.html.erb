@@ -1,16 +1,24 @@
 <div class="project-page edit">
   <h2>Edit Project Page</h2>
 
+  <% if @project.errors.any? %>
+    <% @project.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  <% end %>
+
   <%= form_for :project, url: project_path(@project), :method => :put do |f| %>
+
+    <h3><%= @project.title %></h3>
 
     <%= field_set_tag do %>
     <%= f.label :description %>
-  <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "description") %>
+  <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... you have to write a minimum of 10 characters.", :class => "description") %>
 <% end %>
 
   <%= field_set_tag do %>
     <%= f.label :about %>
-  <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
+  <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... You have to write a minimum of 10 characters", :class => "about") %>
 <% end %>
 
   <div><%= f.label :closing_date %><br />

@@ -7,34 +7,30 @@
     <% end %>
   <% end %>
 
-  <%= form_for @project do |f| %>
+  <%= bootstrap_form_for @project do |f| %>
 
     <%= f.hidden_field :buyer_id %>
 
     <%= field_set_tag do %>
-    <%= f.label :title %>
   <%= f.text_field :title %>
   <% end %>
 
   <%= field_set_tag do %>
-    <%= f.label :description %>
   <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "about") %>
   <% end %>
 
   <%= field_set_tag do %>
-    <%= f.label :about %>
   <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
   <% end %>
 
-  <div><%= f.label :closing_date %><br />
-    <%= f.date_select(:closing_date, { include_blank: true, start_year: Time.now.year, end_year: (Time.now.year + 13) }) %></div>
+    <%= f.date_select(:closing_date, { include_blank: true, start_year: Time.now.year, end_year: (Time.now.year + 13) }) %>
 
   <div id ="project-skills" class="form-section">
     <h4>Skills</h4>
     <%= collection_select(:project, :skill_ids, @skills, :id, :name,{}, {multiple:true}) %>
   </div>
 
-  <%= submit_tag "Update" %>
+  <%= submit_tag "Update", class: "btn btn-success" %>
 
   <% end %>
 </div> 

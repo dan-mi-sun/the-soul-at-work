@@ -18,6 +18,6 @@ Then(/^a project should not be created$/) do
 end
 
 Then(/^I should see an error message$/) do
-  page.should have_content("Title can't be blank")
+  page.should have_content("Title is too short (minimum is 4 characters)")
 end
 
