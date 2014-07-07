@@ -14,14 +14,13 @@
       <div class="container-fluid">
         <div class="container nav-collapse">
           <ul class="nav">
-            <li><%= link_to 'Start A Project', new_project_path  %></li>
-            <li><%= link_to 'Profile', me_user_path %></li>
+            <li><button class="btn btn-default"><%= link_to 'Start A Project', new_project_path  %></button></li>
+            <li><%= link_to 'Projects', me_user_path %></li>
+            <li><%= link_to 'Profile', projects_path %></li>
             <li><%= link_to 'Edit Profile', edit_user_path %></li>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-            <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
-            <li><%= link_to 'Forgotten Password', new_user_password_path %></li>
           </ul>
         </div>
       </div>

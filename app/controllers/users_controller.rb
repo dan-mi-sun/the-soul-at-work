@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def me
     @user = current_user
-    render :show
+    @projects = Project.all
+    render :template => "users/#{current_user.type.downcase}"
   end
 
   def edit 
