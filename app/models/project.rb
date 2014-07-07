@@ -8,7 +8,8 @@ class Project < ActiveRecord::Base
    has_many :requisite_skills
    has_many :skills, :through => :requisite_skills
 
-   has_many :creatives, :class_name => "User", :through => :skills
+   has_many :proposals
+   has_many :creatives, :through => :proposals
 
    belongs_to :buyer
 

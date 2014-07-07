@@ -10,7 +10,7 @@ describe Project do
   it { should have_many(:requisite_skills) }
   it { should have_many(:skills).through(:requisite_skills) }
 
-  it { should have_many(:creatives).through(:skills) }
+  it { should have_many(:creatives).through(:proposals) }
 
   it { should belong_to(:buyer) }
 
