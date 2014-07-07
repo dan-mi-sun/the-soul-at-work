@@ -12,11 +12,4 @@ class Project < ActiveRecord::Base
 
    belongs_to :buyer
 
-
-  def relevant_projects(creative)
-    @projects.each do |project| 
-    project.skills.where(:skill => creative.skills.ids)
-    end
-  end
-
 end

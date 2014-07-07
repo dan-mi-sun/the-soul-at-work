@@ -4,11 +4,8 @@
 
   <h4><%= @user.username %>'s Relevant Projects</h4>
   <ul>
-    <% @projects.each do |project| %> 
-      <% project.skills.where(:skill => @user.skills.ids) %>
-    <li>
-      <%= project.title %>
-    </li>
+    <% @user.projects.each do |project| %>
+      <li><%= project.title %></li>
     <% end %>
   </ul>
 

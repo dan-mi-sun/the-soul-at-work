@@ -5,7 +5,7 @@ Feature: Display Relevant Projects Where Expertise Match Project Required Skills
       And a user signs in
       And a project exists
       And skills exist
-      And a project has skills 
+      And a project has relevant skills 
       And the user has skills
       And We are in the profile page
 
