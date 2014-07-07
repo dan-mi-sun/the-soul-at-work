@@ -1,0 +1,18 @@
+<div class="profile-page">
+
+  <%= render partial: "users/show", :locals => { :user => @user } %>
+
+  <h4><%= @user.username %>'s Projects</h4>
+  <ul>
+    <li>
+      <% @user.projects.each do |project| %>
+        <%= project.title %>
+      <% if @user.id == current_user.id %>
+        <%= link_to "Edit", edit_project_path(project.id), class: "edit-project"  %><br />
+    <% end %>
+    <% end %>
+    </li>
+  </ul>
+
+</div>
+
