@@ -1,20 +1,23 @@
 Given(/^the user is on the project page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit project_path(@project)
 end
 
 When(/^they choose start a pitch$/) do
-  pending # express the regexp above with the code you wish you had
+  click_link("Submit a Pitch")
 end
 
 Then(/^then they should be taken to the edit pitch page$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content 'Your Proposal'
 end
 
 Then(/^when they complete the form$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in "Title", :with => Faker::Company.name
+  fill_in "Description", :with => Faker::Company.catch_phrase
+  fill_in "About", :with => Faker::Company.bs
+  click_on "Update"
 end
 
 Then(/^their pitch should be submitted$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(Proposal.count).to eq(1)
 end
 

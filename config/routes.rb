@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :projects, :only => [:new, :create, :edit, :update, :show, :index] do
   end
-    
+
+  resources :proposals, :only => [:new, :create, :edit, :update, :show, :index] do
+  end
 
   resource :user, :only => [] do
     member do

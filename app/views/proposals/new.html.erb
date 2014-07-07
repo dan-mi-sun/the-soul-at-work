@@ -1,0 +1,29 @@
+<div class="profile-page">
+  <h2>Your Proposal</h2>
+
+  <% if @proposal.errors.any? %>
+    <% @proposal.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  <% end %>
+
+  <%= bootstrap_form_for @proposal do |f| %>
+
+    <%= f.hidden_field :creative_id %>
+
+    <%= field_set_tag do %>
+  <%= f.text_field :title %>
+  <% end %>
+
+  <%= field_set_tag do %>
+  <%= f.text_area(:description, :cols => 50, :rows => 20, :placeholder => "Tell us about the project ... ", :class => "about") %>
+  <% end %>
+
+  <%= field_set_tag do %>
+  <%= f.text_area(:about, :cols => 50, :rows => 20, :placeholder => "Tell us about yourself ... ", :class => "about") %>
+  <% end %>
+
+  <%= submit_tag "Update", class: "btn btn-success" %>
+
+  <% end %>
+</div> 
