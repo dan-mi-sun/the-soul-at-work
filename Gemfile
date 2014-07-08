@@ -19,6 +19,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'bootstrap_form'
 
 gem 'rails_12factor', group: :production
+
+gem 'twilio-ruby'
   
 group :development, :test do
   gem 'spring'
