@@ -1,5 +1,5 @@
 Given(/^a project has proposals$/) do
-  @proposal = Proposal.create!(:title => "Ruby Proposal", :description => Faker::Company.bs, :about => Faker::Commerce.department)
+  @proposal = Proposal.create!(:title => "Ruby Proposal", :description => Faker::Company.bs, :about => Faker::Lorem.sentence)
   @project.proposals << @proposal
 end
 
