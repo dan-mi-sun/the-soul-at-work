@@ -22,5 +22,14 @@
 
   <button class="btn btn-default"><%= link_to 'Submit a Pitch', new_proposal_path, class: "show-proposal" %></button><br />
 
+  <h4>Proposals for this project:</h4>
+    <li>
+      <% @project.proposals.each do |proposal| %>
+        <%= proposal.title %>
+    <% end %>
+    </li>
+  </ul>
+  <hr />
+
 </div>
 
