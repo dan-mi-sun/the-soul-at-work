@@ -18,6 +18,9 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap_form'
 
+gem 'balanced'
+gem 'figaro'
+
 gem 'rails_12factor', group: :production
 
 gem 'twilio-ruby'
