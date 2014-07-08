@@ -10,6 +10,10 @@
   <p><%= @proposal.description %></p>
   <hr />
 
+  <h4>Status of this Proposal:</h4>
+  <p><%= @proposal.status %></p>
+  <hr />
+
   <% if @project.buyer_id == current_user.id %>
     <%= form_for :proposal, url: project_proposal_path(@project, @proposal), :method => :put do |f| %>
       <%= f.select( :status, [['Accept', 1], ['Decline', 2]]) %>
