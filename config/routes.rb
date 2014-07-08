@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :projects, :only => [:new, :create, :edit, :update, :show, :index] do
-  end
-
-  resources :proposals, :only => [:new, :create, :edit, :update, :show, :index] do
+    resources :proposals, :only => [:new, :create, :edit, :update, :show, :index]
   end
 
   resource :user, :only => [] do

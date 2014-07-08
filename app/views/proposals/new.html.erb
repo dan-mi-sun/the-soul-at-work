@@ -7,9 +7,10 @@
     <% end %>
   <% end %>
 
-  <%= bootstrap_form_for @proposal do |f| %>
+  <%= bootstrap_form_for([@project, @proposal]) do |f| %>
 
     <%= f.hidden_field :creative_id %>
+    <%= f.hidden_field :project_id  %>
 
     <%= field_set_tag do %>
   <%= f.text_field :title %>

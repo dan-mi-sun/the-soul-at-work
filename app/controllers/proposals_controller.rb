@@ -1,11 +1,15 @@
 class ProposalsController < ApplicationController
 
   def new
-    @proposal = Proposal.new(:creative_id => current_user.id)
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.new( :creative_id => current_user.id )
   end
 
   def create
+
     @proposal = Proposal.new(params_for_proposal)
+    @proposal.project_id = params["project_id"]
+
     if @proposal.save
       flash[:notice] = "Your proposal has been saved"
       redirect_to projects_path

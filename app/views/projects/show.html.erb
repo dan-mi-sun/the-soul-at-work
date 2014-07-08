@@ -20,16 +20,16 @@
   </ul>
   <hr />
 
-  <button class="btn btn-default"><%= link_to 'Submit a Pitch', new_proposal_path, class: "show-proposal" %></button><br />
+  <button class="btn btn-default"><%= link_to 'Submit a Pitch', new_project_proposal_path(@project), class: "show-proposal" %></button><br />
+
+<hr />
 
   <h4>Proposals for this project:</h4>
-    <li>
-      <% @project.proposals.each do |proposal| %>
-        <%= proposal.title %>
-    <% end %>
-    </li>
-  </ul>
-  <hr />
+  <% @project.proposals.each do |proposal| %>
+  <li><%= link_to proposal.title, project_proposal_path(@project, proposal.id), class: "show-proposal"  %></li><br />
+  </li>
+<% end %>
+</ul>
 
 </div>
 
