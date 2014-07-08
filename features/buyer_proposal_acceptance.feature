@@ -14,5 +14,5 @@ Feature: A buyer accepts a proposal for thier project
 
   Scenario: they should be able to decline the proposal
       And when they submit the decline option 
-    Then their choice should be commmited
+    Then their choice should be stored as declined
     
