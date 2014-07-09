@@ -3,6 +3,7 @@
 <head>
   <title>The Soul At Work</title>
   <meta name="viewport" content="width=device-width, intial-scale=1">
+  <script type="text/javascript" src="https://js.balancedpayments.com/1.1/balanced.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,6 +18,7 @@
             <li><button class="btn btn-default"><%= link_to 'Start A Project', new_project_path  %></button></li>
             <li><%= link_to 'Projects', projects_path %></li>
             <li><%= link_to 'Profile', me_user_path %></li>
+            <li><%= link_to 'Accounts', 'https://dashboard.balancedpayments.com/#/marketplaces/TEST-MP20Bbo9ZMHcvsy8ALtO1TG5/transactions', :target => "_blank" %></li>
             <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
