@@ -11,6 +11,9 @@
   <%= f.password_field :password, autocomplete: "off" %>
   <%= f.password_field :password_confirmation, autocomplete: "off" %>
   <%= f.text_field :username %> </div>
+  <%= f.text_field :first_name %> </div>
+  <%= f.text_field :last_name %> </div>
+  <%= f.text_field :address %> </div>
   <%= f.date_select(:birthday, { start_year: (120.years.ago).year, end_year: (18.years.ago).year }) %>
 
   <p>Account Type</p>

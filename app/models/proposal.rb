@@ -7,7 +7,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :creative
   belongs_to :project
 
-  # after_save :send_confirmation, if: proc { |proposal| changes.include?(:status)  && proposal.changes["status"][1] == 1 }
+  after_save :send_confirmation, if: proc { |proposal| changes.include?(:status)  && proposal.changes["status"][1] == 1 }
 
   def send_confirmation 
     @client = Twilio::REST::Client.new TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
@@ -19,7 +19,7 @@ class Proposal < ActiveRecord::Base
     )
   end
 
-  # after_save :debit_card, if: proc { |proposal| changes.include?(:status) && proposal.changes["status"][1] == 1 }
+  after_save :debit_card, if: proc { |proposal| changes.include?(:status) && proposal.changes["status"][1] == 1 }
 
   def debit_card
     card = Balanced::Card.fetch(project.buyer.balanced_card_uri)
