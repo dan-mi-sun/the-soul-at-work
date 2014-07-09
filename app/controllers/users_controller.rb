@@ -7,6 +7,12 @@ class UsersController < ApplicationController
     render :template => "users/#{current_user.type.downcase}"
   end
 
+  def show
+    @user = User.find(params[:id])
+    @projects = Project.all
+    render :template => "users/#{current_user.type.downcase}"
+  end
+
   def edit 
     @user = current_user
     @languages = Language.all
