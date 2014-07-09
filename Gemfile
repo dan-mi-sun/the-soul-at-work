@@ -24,6 +24,8 @@ gem 'figaro'
 gem 'rails_12factor', group: :production
 
 gem 'twilio-ruby'
+
+gem 'will_paginate', '~> 3.0'
   
 group :development, :test do
   gem 'spring'
