@@ -14,4 +14,7 @@ class User < ActiveRecord::Base
    has_many :user_languages
    has_many :languages, :through => :user_languages
 
+   has_many :incoming_messages, :class_name => "Message", :foreign_key => :recipient_id
+   has_many :outgoing_messages, :class_name => "Message", :foreign_key => :sender_id
+
 end
