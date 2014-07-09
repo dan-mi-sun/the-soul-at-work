@@ -3,8 +3,8 @@ Given(/^a project has relevant skills$/) do
   @project.skills << @skill
 end
 
-Given(/^the user has skills$/) do
-  @user.skills << @skill 
+Given(/^the creative has skills$/) do
+  @creative.skills << @skill 
 end
 
 Then(/^they should see some projects with matching skills$/) do

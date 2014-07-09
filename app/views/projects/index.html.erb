@@ -1,4 +1,6 @@
+<h4>Index of Projects</h4>
+
 <% @projects.each do |project| %>
-  <li><%= link_to project.title, project_path(project.id), class: "show-project"  %></li><br />
+  <li>Project Title: <%= link_to project.title, project_path(project.id), class: "show-project" %><br /><b> Tendered by: <%= link_to project.buyer.username, user_path(project.buyer) %></b></li> <hr />
 <% end %>
 

@@ -1,5 +1,24 @@
+Given(/^a creative exists$/) do
+  @email = Faker::Internet.email
+
+  @creative = User.create!(:username => Faker::Name.first_name,
+    :password => "password",
+    :type => "Creative",
+    :about => Faker::Lorem.paragraph,
+    :location => Faker::Address.city,
+    :email => @email
+    )
+end
+
+Given(/^a creative signs in$/) do
+  visit new_user_session_path
+  fill_in("Email", :with => @email)
+  fill_in("Password", :with => 'password')
+  click_button("Sign in")
+end
+
 Given(/^a project has proposals$/) do
-  @proposal = Proposal.create!(:title => "Ruby Proposal", :description => Faker::Company.bs, :about => Faker::Lorem.sentence)
+  @proposal = Proposal.create!(:title => "Ruby Proposal", :description => Faker::Lorem.sentence, :about => Faker::Lorem.sentence, :creative_id => @creative.id)
   @project.proposals << @proposal
 end
 

@@ -1,5 +1,8 @@
 <div class="profile-page">
-  <h3><%= @proposal.title %></h3>
+  <h3>Proposal Title: <%= @proposal.title %></h3>
+  <hr />
+  <h4> Project Title: <%= link_to @project.title, project_path(@project.id), class: "show-project" %> </h4>
+  <h5> Tendered by: <%= link_to @project.buyer.username, user_path(@project.buyer) %></h5>
   <hr />
 
   <h4>About the Creative:</h4>

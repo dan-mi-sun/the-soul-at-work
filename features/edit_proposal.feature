@@ -1,8 +1,8 @@
 Feature: Edit Proposal
 
   Scenario: A creative edits their proposal
-    Given a user exists
-      And a user signs in
+    Given a creative exists
+      And a creative signs in
       And a project exists
       And a project has proposals 
       And the user is on the edit proposal page

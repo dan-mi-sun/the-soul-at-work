@@ -1,9 +1,10 @@
 Given(/^a project exists$/) do
+  @buyer_id = Buyer.create!(:username => Faker::Company.name, :email => 'buyer_email@email.com', :password => 'password')
   @project = Project.create!(:title => Faker::Company.name, 
                              :description => Faker::Company.catch_phrase,
                              :about => Faker::Company.bs,
                              :closing_date => "2020-06-16",
-                             :buyer_id => @user.id
+                             :buyer_id => @buyer_id.id
                             )
 end
 

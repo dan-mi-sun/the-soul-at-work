@@ -1,4 +1,4 @@
-Given(/^the user is on the project page$/) do
+Given(/^the creative is on the project page$/) do
   visit project_path(@project)
 end
 
@@ -7,6 +7,7 @@ When(/^they choose start a pitch$/) do
 end
 
 Then(/^then they should be taken to the edit pitch page$/) do
+  visit new_project_proposal_path(@project)
   expect(page).to have_content 'Your Proposal'
 end
 

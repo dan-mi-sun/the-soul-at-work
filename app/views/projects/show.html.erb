@@ -20,14 +20,15 @@
   </ul>
   <hr />
 
+  <% if current_user.type == "Creative" %>
   <button class="btn btn-default"><%= link_to 'Submit a Pitch', new_project_proposal_path(@project), class: "show-proposal" %></button><br />
-
 <hr />
+<% end %>
 
-  <h4>Proposals for this project:</h4>
-  <% @project.proposals.each do |proposal| %>
-  <li><%= link_to proposal.title, project_proposal_path(@project, proposal.id), class: "show-proposal"  %></li><br />
-  </li>
+  <h4>Submitted pitches for this project:</h4>
+
+<% @project.proposals.each do |proposal| %>
+  <li>Proposal Title: <%= link_to proposal.title, project_proposal_path(@project, proposal.id), class: "show-proposal" %><br /><b> Pitched by: <%= link_to proposal.creative.username, user_path(proposal.creative) %></b></li> <hr />
 <% end %>
 </ul>
 

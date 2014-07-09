@@ -1,10 +1,11 @@
 Feature: A buyer accepts a proposal for thier project 
 
   Background:
-    Given a buyer exists
-      And a buyer signs in
+    Given a buyer wiht a project exists
+      And a creative exists
+      And the buyer signs in
       And a they have a project
-      And a project has proposals 
+      And the project has proposals 
       And they are on the proposal show page
       And they should see the acceptance options
 
