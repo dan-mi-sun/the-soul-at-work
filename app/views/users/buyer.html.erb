@@ -1,18 +1,19 @@
-<div class="profile-page">
-
-  <%= render partial: "users/show", :locals => { :user => @user } %>
-
-  <h4><%= @user.username %>'s Projects</h4>
-  <ul>
-    <li>
+<div id="profile-container">
+  <div id="partial-container">
+    <%= render partial: "users/show", :locals => { :user => @user } %>
+  </div>
+  <div id="tendered-projects" class="clear-both">
+    <div class="row">
+      <h4><%= @user.username %>'s Projects</h4>
+      <hr />
       <% @user.projects.each do |project| %>
+        <div class="col-md-4 profile-project">
         <%= project.title %>
-      <% if @user.id == current_user.id %>
-        <%= link_to "Edit", edit_project_path(project.id), class: "edit-project"  %><br />
+        <% if @user.id == current_user.id %>
+          <%= link_to "Edit", edit_project_path(project.id), class: "edit-project"  %>
+      </div>
     <% end %>
     <% end %>
-    </li>
-  </ul>
-
+    </div>
+  </div>
 </div>
-

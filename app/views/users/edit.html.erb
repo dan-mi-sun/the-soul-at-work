@@ -31,6 +31,11 @@
     <%= collection_select(:user, :skill_ids, @skills, :id, :name,{},{multiple:true}) %>
   </div>
 
+  <%= field_set_tag do %>
+    <%= f.file_field(:avatar, accept: 'image/png,image/gif.image/jpeg') %>
+  <% end %>
+
+
   <%= submit_tag "Update", class: "btn btn-success" %>
 
 <% end %>
