@@ -1,18 +1,34 @@
-Pivotal tracker: https://www.pivotaltracker.com/s/projects/1111898
+===The Soul At Work
+An escrow marketplace connecting creatives & business owners outsourcing creative work
 
 http://mighty-beach-6357.herokuapp.com
 
-===Brief
-Brief for the final project can be found [here.](https://github.com/dan-mi-sun/the-soul-at-work/blob/master/BRIEF.rdoc)
+===Logins
 
-==Notes from WeGotCoders:
+You can login with creative@email.com with password: password
+
+You can login with buyer@email.com wit password: password
+
+===Key Features
+At present after a buyer lists a project they are asked to credit their escrow account. This is all handelled within the app using the Balanced API, using a JavaScript library for verification of the validity of the card and buyer details. 
+
+The project can then have proposals submitted by creatives. Once a proposal is accepted by the buyer, the creative with the winning pitch is notified by SMS via Active Record Callback using the twilio API. 
+
+A creative can see dynamic lists of projects based on their expertise and can communicate with the buyer through an internal messaging system.
+
+===Brief
+Brief for the final project can be found here: https://github.com/dan-mi-sun/the-soul-at-work/blob/master/BRIEF.rdoc
+
+Pivotal tracker: https://www.pivotaltracker.com/s/projects/1111898
+
+===Notes from WeGotCoders:
 http://dan-mi-sun.github.io/
 
 http://dan-mi-sun.github.io/wegotcoders/why-code-with-we-got-coders/
 
 http://dan-mi-sun.github.io/reflections-on-8-weeks-with-we-got-coders/
 
-==Gems used:
+===Gems used:
 
 ===For escrow payments: 
 
