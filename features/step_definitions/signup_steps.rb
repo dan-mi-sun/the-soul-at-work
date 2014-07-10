@@ -4,10 +4,13 @@ end
 
 When(/^a "(.*?)" completes the form with valid information$/) do |user|
   @type = user
-   fill_in 'Email', :with => 'test@test.org'
+  within '#user_email' do
+    fill_in 'Email', :with => 'test@test.org'
+  end
+   
    fill_in 'Password', :with => 'password'
    fill_in 'Password confirmation', :with => 'password'
-   fill_in 'Username', :with => user
+   fill_in 'Username', :with => Faker::Internet.user_name
    within "#user_birthday_3i" do
      select '1'
    end
@@ -20,6 +23,8 @@ When(/^a "(.*?)" completes the form with valid information$/) do |user|
    within("#account-type") do
      choose(user)
    end
+   save_and_open_page
+   binding.pry
    click_button('Sign up')
 end
 
