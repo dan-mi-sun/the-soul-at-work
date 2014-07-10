@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
+  before_filter :find_a_project, :only => [:update, :edit, :show]
+
   def new
     @project = Project.new(:buyer_id => current_user.id)
     @skills = Skill.all
@@ -67,7 +69,6 @@ class ProjectsController < ApplicationController
   end  
 
   def show
-    @project = Project.find(params[:id])
   end
 
   def index
@@ -75,12 +76,10 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
     @skills = Skill.all
   end
 
   def update
-    @project = Project.find(params[:id])
     if  @project.update(params_for_project)
       flash[:notice] = "Your project has been saved"
       redirect_to new_project_path
@@ -93,6 +92,10 @@ class ProjectsController < ApplicationController
   private
   def params_for_project
     params.require(:project).permit(:title, :description, :about, :closing_date, :buyer_id, :skill_ids => [])
+  end
+
+  def find_a_project
+    @project = Project.find(params[:id])
   end
 
 end
