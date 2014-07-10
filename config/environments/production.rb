@@ -80,4 +80,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  require 'twilio-ruby'
+
+  # put your own credentials here
+  TWILIO_ACCOUNT_SID = 'AC63d638450d7ad8ce9b575ec0ddc1d516' 
+  TWILIO_AUTH_TOKEN = 'b462ba7413a93c1b07f75137bf6d6851' 
 end
