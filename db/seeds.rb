@@ -75,23 +75,36 @@ Language.find_or_create_by(:name => "Xhosa", :code => "XH")
 Skill.find_or_create_by(:name => "Ruby")
 Skill.find_or_create_by(:name => "JavaScript")
 Skill.find_or_create_by(:name => "Java")
+Skill.find_or_create_by(:name => "PHP")
+Skill.find_or_create_by(:name => "Go")
+Skill.find_or_create_by(:name => "Backbone")
+Skill.find_or_create_by(:name => "Cool Beans")
 
 
 
-joe = Creative.find_or_create_by!(:username => "joey88") do |user|
-  user.email = "joe@email.com" 
+mr_miyagi = Creative.find_or_create_by!(:username => "mr_miyagi") do |user|
+  user.email = "creative@email.com" 
   user.password = "password"
   user.birthday = "16 Jun 1979"
   user.about = "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
 end
 
-lola = Buyer.find_or_create_by!(:username => "lola3") do |user|
-  user.email = "lola@email.com" 
+Buyer.create(:first_name => "CHRIS", :last_name => "NISWANDEE", :address => "795 E DRAGRAM, TUCSON, AZ, 85705, US", :email => "email@email.com", :username => "chris", :password => "password")
+
+daniel_sun = Buyer.find_or_create_by!(:username => "daniel_sun") do |user|
+  user.email = "buyer@email.com" 
   user.password = "password"
   user.birthday = "18 Aug 1982"
+  user.first_name = "DANIEL"
+  user.last_name = "SUN"
+  user.address = "795 E DRAGRAM, TUCSON, AZ, 85705, US"
 end
 
-20.times do |i|
-  @receive = Message.create!(subject: "test#{i}", body: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", sender: lola, receiver: joe)
+10.times do |i|
+  @receive_buyer = Message.create!(subject: "test#{i}", body: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", sender: mr_miyagi, receiver: daniel_sun)
+end
+
+10.times do |i|
+  @receive_creative = Message.create!(subject: "test#{i}", body: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", sender: daniel_sun, receiver: mr_miyagi)
 end
