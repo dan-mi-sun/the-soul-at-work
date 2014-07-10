@@ -12,4 +12,7 @@ describe User do
   it { should have_many(:user_languages) }
   it { should have_many(:languages).through(:user_languages) }
 
+  it { should have_many(:incoming_messages) }
+  it { should have_many(:outgoing_messages) }
+
 end
