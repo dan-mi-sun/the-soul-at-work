@@ -93,5 +93,5 @@ lola = Buyer.find_or_create_by!(:username => "lola3") do |user|
 end
 
 20.times do |i|
-  @receive = Message.create!(subject: "test#{i}", body: Faker::Lorem.sentence, sender: lola, receiver: joe)
+  @receive = Message.create!(subject: "test#{i}", body: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", sender: lola, receiver: joe)
 end
