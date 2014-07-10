@@ -90,7 +90,6 @@ mr_miyagi = Creative.find_or_create_by!(:username => "mr_miyagi") do |user|
 
 end
 
-Buyer.create(:first_name => "CHRIS", :last_name => "NISWANDEE", :address => "795 E DRAGRAM, TUCSON, AZ, 85705, US", :email => "email@email.com", :username => "chris", :password => "password")
 
 daniel_sun = Buyer.find_or_create_by!(:username => "daniel_sun") do |user|
   user.email = "buyer@email.com" 
@@ -107,4 +106,8 @@ end
 
 10.times do |i|
   @receive_creative = Message.create!(subject: "test#{i}", body: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", sender: daniel_sun, receiver: mr_miyagi)
+end
+
+10.times do |i|
+  Project.create!(:title => "SEED #{i} Project Title", :description => "NISWANDEE", :about => "795 E DRAGRAM, TUCSON, AZ, 85705, US", :closing_date => "19 Aug 21014", :buyer_id => daniel_sun.id)
 end
