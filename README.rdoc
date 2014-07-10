@@ -1,105 +1,63 @@
 Pivotal tracker: https://www.pivotaltracker.com/s/projects/1111898
+
 http://mighty-beach-6357.herokuapp.com
+
+===Brief
+Brief for the final project can be found [here.](https://github.com/dan-mi-sun/the-soul-at-work/blob/master/BRIEF.rdoc)
 
 ==Notes from WeGotCoders:
 http://dan-mi-sun.github.io/
+
 http://dan-mi-sun.github.io/wegotcoders/why-code-with-we-got-coders/
+
 http://dan-mi-sun.github.io/reflections-on-8-weeks-with-we-got-coders/
 
 ==Gems used:
 
 ===For escrow payments: 
-gem 'balanced' https://github.com/balanced/balanced-ruby
+
+gem ['balanced'](https://github.com/balanced/balanced-ruby)
 
 ===For SMS texts from callbacks:
+
 gem 'twilio-ruby'
 
 ===For registrations:
+
 gem 'devise'
 
 ===For enironment and asset pipeline:
+
 gem 'figaro'
+
 gem 'rails_12factor'
 
 ===For bootstrap styling: 
+
 gem 'therubyracer'
+
 gem 'less-rails'
+
 gem 'twitter-bootstrap-rails'
+
 gem 'bootstrap-datepicker-rails'
+
 gem 'bootstrap_form'
 
 ===Debugging and TDD with:
+
 gem 'cucumber-rails'
+
 gem 'mocha'
+
 gem 'rspec-rails'
+
 gem 'shoulda-matchers'
+
 gem 'mocha'
+
 gem 'launchy'
+
 gem 'database_cleaner'
 
-
-==CORE REQUIREMENTS
-1:1 Test Ratio. Use TDD as you are developing your app. We expect a 1:1 code to test ratio, that is to say that there should be equal amounts of code for the application and your tests. This is not the same as 100% code coverage; although a high degree of code coverage is desirable.
-
-We will assess your ability to:
-o Write effective tests;
-o Cover application code to a high standard (over 90%);
-o Demonstrate appropriate use of various testing tools: rspec, shoulda, cucumber, jasmine,
-machinist, mocha etc.
-
-Authentication. Your app must maintain user accounts and profiles. Login credentials must be
-validated before users can gain access to your application.
-
-Handles invalid data. Forms in your application should validate data and handle incorrect
-inputs. Validate sign up information, verify valid email addresses and secure passwords.
-
-Code Quality. We will look for evidence that your code is modular, extensive, reusable, well-
-documented and doesn't include any unnecessary repetition. We expect to see:
-o Use of partials to DRY (Don’t Repeat Yourself) up your views.
-o Appropriate use of the MVC design pattern to put your code in the appropriate place
-within the controller.
-o Good naming conventions, use of modules, concerns and gems where appropriate.
-
- JavaScript & jQuery. Spice up the front-end of your app and have some event driven functionality. We will look for evidence of well-organised Javascript that is unobtrusive, clear to read and efficient. Use of a front-end framework is desirable.
-
- AJAX. Use AJAX to communicate with the server without reloading the page. A multi-page application is perfectly acceptable, but some use of AJAX is desirable. You might use AJAX to add live content (activity streams, comments, voting), or to validate a form input.
-
- Ruby Gems. We are looking for evidence of good use of existing gems where possible and appropriate. Don't reinvent the wheel!
-We would expect usage of some of the following gems:
-o Rails/Padrino/Sinatra o Devise
-o Sphinx
-o Nokogiri
-o Geocoder
-o Carrierwave o Haml
-
- HTML / CSS Style. Your application should make good use of CSS/SCSS and HTML5 semantic markup. We will look for evidence of forethought in choosing elements and naming classes and ids. Your application should be capable of being displayed adequately on a 1024x768 screen or higher resolution. Support for lower resolutions (e.g. mobiles) are not required. We expect your HTML and CSS to pass W3C validation.
-
- External APIs. Your application must interact with at least one external API or service, whether you write it yourself or source one from an existing API. We expect that you use one or more of the following list, although it is by no means exhasutive:
-o Google Maps o Twitter
-o Instagram
-o Facebook
-o Stripe
-o Soundcloud o Yelp
-o Foursquare
-
- Database. Your application must persist data in a server-based database such as PostgreSQL, Mongo or MySQL. SQLite3 is not acceptable.
-
- Deployment. The application must be deployed and the URL provided as part of the submission. This could be on Heroku or Amazon Web Services. We will provide technical support and assistance with deployment where necessary.
-
-Your source code must be hosted on GitHub with a README file that outlines:
-o What the application does
-o Key statistics for the application: code to test ratio and test coverage, lines of code, key
-gems and APIs used.
-o A link to the deployed application
-o A link to your pivotal tracker project
-o Short instructions on how to use the application that demonstrates its core behaviour. o A link to your portfolio website, twitter username and a mention for We Got Coders.
-
-PLANNING
-Before you start, we need to see evidence of planning. As part of your submission, we will assess your ability in each of the following areas:
-
- User stories. We expect you to write effective user stories. What features will it have? What do you reasonably think you can implement in the time period? While it is acceptable (and probable) that some features will change or be dropped over the period, we will look to see how closely your implementation adheres to your project outcome. You should create a public pivotal tracker project, write stories, assess complexity and maintain it over the course of the two weeks.
-
- Mockups. Begin sketching out on paper what a few of your core pages will look like and how they will work. We expect to see some forethought of your models and associations before you start coding.
-
- Frameworks / Libraries. We expect you to identify up front the most appropriate frameworks, services and libraries to employ on the project. Create a shortlist of libraries and gems that you are likely to use.
 
