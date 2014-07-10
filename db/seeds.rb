@@ -109,5 +109,5 @@ end
 end
 
 10.times do |i|
-  Project.create!(:title => "SEED #{i} Project Title", :description => "NISWANDEE", :about => "795 E DRAGRAM, TUCSON, AZ, 85705, US", :closing_date => "19 Aug 21014", :buyer_id => daniel_sun.id)
+  Project.create!(:title => "SEED #{i} Project Title", :description => "asdkh;jash;jhsljkhflsjdfglasdjgflsjagfaljhgfljhaglhjglfhjgsahjgfaldsgdlfjhgNISWANDEE", :about => "795 E DRAGRAM, TUCSON, AZ, 85705, US", :closing_date => "19 Aug 21014", :buyer_id => daniel_sun.id)
 end
