@@ -26,6 +26,9 @@ gem 'rails_12factor', group: :production
 gem 'twilio-ruby'
 
 gem 'will_paginate', '~> 3.0'
+
+gem 'carrierwave'
+gem 'mini_magick'
   
 group :development, :test do
   gem 'spring'
