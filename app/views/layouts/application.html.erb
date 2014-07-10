@@ -17,6 +17,7 @@
           <ul class="nav">
             <li><button class="btn btn-default"><%= link_to 'Start A Project', new_project_path  %></button></li>
             <li><%= link_to 'Projects', projects_path %></li>
+            <li><%= link_to 'Inbox', messages_path %></li>
             <li><%= link_to 'Profile', me_user_path %></li>
             <li><%= link_to 'Accounts', 'https://dashboard.balancedpayments.com/#/marketplaces/TEST-MP20Bbo9ZMHcvsy8ALtO1TG5/transactions', :target => "_blank" %></li>
             <li><%= link_to 'Edit Settings', edit_user_registration_path %></li>
@@ -28,18 +29,30 @@
     </div>
   </nav>
 
-  <div class='notice-parent'>
+  <% if flash[:alert]%>
     <span class="notice alert-info"><%= notice %></span>
+  <% end %>
+  <% if flash[:alert]%>
     <span class="alert alert-warning"><%= alert %></span>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 wrapper">
+        <main>
+        <%= yield %>
+        </main>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <footer>
+          <p>&copy; The Soul at Work 2014</p>
+        </footer>
+      </div>
+    </div>
+    <div class"clearfix"></div>
   </div>
-
-  <main>
-  <%= yield %>
-  </main>
-
-  <footer>
-    <p>&copy; The Soul at Work 2014</p>
-  </footer>
 
 </body>
 </html>

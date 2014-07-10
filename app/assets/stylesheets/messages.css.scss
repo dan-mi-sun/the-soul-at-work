@@ -1,0 +1,91 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the Message controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.messages{
+	display: inline-block;
+	padding: 10px;
+}
+
+#user{
+	margin: 5px;
+	font-size: 1.5em;
+	background-color: black;
+	color: white;
+	display: inline-block;
+}
+
+#subject{
+	background-color: brown;
+	color: white;
+	display: inline-block;
+	font-size: 1.5em;
+}
+
+#read {
+  background-color: #E8EEF7;
+}
+
+#unread {
+  background-color: #ffffff;
+}
+
+#one_mess{
+	border-bottom: 2px solid black;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+/* -------------  SHOW INDIVIDUAL MESSAGE ----------------*/
+.message-wrapper p {
+	display: block;
+	margin: 20px;
+}
+
+#message-subject {
+	margin: 20px;
+	display: inline-block;
+	border-bottom: 2px solid rgb(171,30,38);
+	font-size: 1.5em;
+}
+
+/* -------------- REPLY FORM ---------------------- */
+
+#reply-form {
+	margin: 20px;
+}
+
+/* -------------- PAGINATION ---------------------- */
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+.apple_pagination a, .apple_pagination span {
+  padding: 0.2em 0.3em; }
+.apple_pagination .disabled {
+  color: #aaaaaa; }
+.apple_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #bebebe;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+.apple_pagination a {
+  text-decoration: none;
+  color: black; }
+.apple_pagination a:hover, .apple_pagination a:focus {
+  text-decoration: underline; }
