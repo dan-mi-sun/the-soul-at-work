@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
   root 'pages#home'
   
   get "/projects/new_card" => "projects#new_card", as: "new_card"
@@ -20,4 +22,11 @@ Rails.application.routes.draw do
       put :update, :as => :update_profile
     end
   end
+
+  resources :messages do
+    collection do
+      get 'outbox'
+    end
+  end
+
 end
