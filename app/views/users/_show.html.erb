@@ -1,26 +1,29 @@
-<h3>Profile of <%= @user.username %></h3>
-<% if @user.id == current_user.id %>
-  <%= link_to "Edit Profile", edit_user_path(@user), class: "edit-user"  %>
-  <% end %>
-<hr />
-<h4>About this <%= @user.type %></h4>
-<p><%= @user.about %></p>
-<hr />
-
-<%= image_tag(@user.avatar.url , class: "avatar") if @user.avatar? %>
-
-<ul>
-  <li>Account type: <b><%= @user.type %></b></li>
-  <li>Location: <b><%= @user.location %></b></li>
-  <li>Skills:
-    <% @user.skills.each do |skill| %>
-      <b><%= skill.name %> | </b>
-  <% end %>
-  </li>
-  <li>Languages:
-    <% @user.languages.each do |language| %>
-      <b><%= language.name %> | </b>
-  <% end %>
-  </li>
+<div id="partial-left-half">
+  <h3>Profile of <%= @user.username %></h3>
+  <% if @user.id == current_user.id %>
+    <%= link_to "Edit Profile", edit_user_path(@user), class: "edit-user"  %>
+<% end %>
   <hr />
-</ul>
+  <h4>About this <%= @user.type %></h4>
+  <p><%= @user.about %></p>
+  <hr />
+
+  <ul>
+    <li>Account type: <b><%= @user.type %></b></li>
+    <li>Location: <b><%= @user.location %></b></li>
+    <li>Skills:
+      <% @user.skills.each do |skill| %>
+        <b><%= skill.name %> | </b>
+    <% end %>
+    </li>
+    <li>Languages:
+      <% @user.languages.each do |language| %>
+        <b><%= language.name %> | </b>
+    <% end %>
+    </li>
+    <hr />
+  </ul>
+</div>
+<div id="partial-right-half">
+  <%= image_tag(@user.avatar.url , class: "avatar") if @user.avatar? %>
+</div>

@@ -27,13 +27,40 @@ body {
   background-color: rgba(255,255,255,0.98);
 }
 
-.wrapper {
-  min-height: 900px;
-}
+
+img {
+  max-width: 20rem;
+} 
 
 hr {
   margin: 20px 0;
   border: 0;
   border-top: 1px solid #2F4F4F; 
   border-bottom: 1px solid #2F4F4F;
+}
+
+.wrapper {
+  min-height: 900px;
+}
+
+/* ///////////// PROFILE PAGE ///////////////////////////// */
+#partial-left-half {
+  float: left;
+  width: 50%;
+}
+
+#partial-right-half {
+  float: right;
+  margin-top: 2rem;
+  width: 40%;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.profile-project {
+ float: left;
+ width: 33%;
+ margin-bottom: 5%;
 }
