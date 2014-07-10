@@ -5,6 +5,7 @@
   <div id="tendered-projects" class="clear-both">
     <div class="row">
       <h4><%= @user.username %>'s Projects</h4>
+      <hr />
       <% @user.projects.each do |project| %>
         <div class="col-md-4 profile-project">
         <%= project.title %>

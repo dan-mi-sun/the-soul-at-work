@@ -5,6 +5,7 @@
   <div id="relevant-projects" class="clear-both">
     <div class="row">
       <h4><%= @user.username %>'s Relevant Projects</h4>
+      <hr />
       <% @user.projects.each do |project| %>
         <div class="col-md-4 profile-project">
         <%= link_to project.title, project_path(project.id), class: "show-project"  %>
