@@ -21,6 +21,13 @@ Brief for the final project can be found here: https://github.com/dan-mi-sun/the
 
 Pivotal tracker: https://www.pivotaltracker.com/s/projects/1111898
 
+===Test Coverage
+$ rake stats
+Code LOC: 354     Test LOC: 578     Code to Test Ratio: 1:1.6
+
+simplecov
+Coverage report generated for Cucumber Features, RSpec 700 / 774 LOC (90.44%) covered.
+
 ===Notes from WeGotCoders:
 http://dan-mi-sun.github.io/
 
