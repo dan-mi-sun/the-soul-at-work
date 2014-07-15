@@ -1,68 +1,82 @@
-===Contact
-twitter: dan_mi_sun
-
-gmail: dan.mi.sun@gmail.com
-
-uk.linkedin.com/in/danielsundigital/
-
 ===The Soul At Work
+
+====About 
+This project has been created as part of the We Got Coders training scheme and it demonstrates the skills that I have acquired during my training period.
+
+We Got Coders is a consultancy that provides experts in agile web development, specialising in Ruby technology.
+
+http://wegotcoders.com/
+
+====Description
 An escrow marketplace connecting creatives & business owners outsourcing creative work
+
+====Heroku App
 
 http://mighty-beach-6357.herokuapp.com
 
-===Logins
+====Logins
 
 You can login with creative@email.com with password: password
 
 You can login with buyer@email.com wit password: password
 
-===Key Features
+====Instructions
+0. Register a new creative or buyer account (or use the accounts provided above)
+1. Update your profile and add a profile picture if desired
+2a. If user is of type Creative then choose expertise from skills list
+2b. If user is of type Buyer then list a project
+2c. Buyer will be taken to a payment page to add funds to their escrow account. This is automatically updated on the Balanced back-end test marketplace.
+3. As a creative you will see a list of projects in your profile for which you have the requisite expertise required of the project.
+4. As a creative you can submit a proposal to a project
+5. As a buyer you can accept a proposal on one of your projects.
+6. When status of proposal changes to accepted, creative receives an SMS to notfiy them
+6b. Buyers escrow account will be debited upon acceptance.
+7. Both creative and buyer can message eachother through the internal messaging system.
+
+====Key Features
 At present after a buyer lists a project they are asked to credit their escrow account. This is all handelled within the app using the Balanced API, using a JavaScript library for verification of the validity of the card and buyer details. 
 
 The project can then have proposals submitted by creatives. Once a proposal is accepted by the buyer, the creative with the winning pitch is notified by SMS via Active Record Callback using the twilio API. 
 
 A creative can see dynamic lists of projects based on their expertise and can communicate with the buyer through an internal messaging system.
 
-===Brief
+====Brief
 Brief for the final project can be found here: https://github.com/dan-mi-sun/the-soul-at-work/blob/master/BRIEF.rdoc
+
+====User stories
 
 Pivotal tracker: https://www.pivotaltracker.com/s/projects/1111898
 
-===Test Coverage
+=====Test Coverage
 $ rake stats
 Code LOC: 354     Test LOC: 578     Code to Test Ratio: 1:1.6
 
 simplecov
 Coverage report generated for Cucumber Features, RSpec 700 / 774 LOC (90.44%) covered.
 
-===Notes from WeGotCoders:
-http://dan-mi-sun.github.io/
+====Key APIs used:
 
-http://dan-mi-sun.github.io/wegotcoders/why-code-with-we-got-coders/
+=====For escrow payments: 
 
-http://dan-mi-sun.github.io/reflections-on-8-weeks-with-we-got-coders/
+gem 'balanced'
 
-===Gems used:
-
-===For escrow payments: 
-
-gem ['balanced'](https://github.com/balanced/balanced-ruby)
-
-===For SMS texts from callbacks:
+=====For SMS texts from callbacks:
 
 gem 'twilio-ruby'
 
-===For registrations:
+====Key Gems used:
+
+=====For registrations:
 
 gem 'devise'
 
-===For enironment and asset pipeline:
+=====For enironment and asset pipeline:
 
 gem 'figaro'
 
 gem 'rails_12factor'
 
-===For bootstrap styling: 
+=====For bootstrap styling: 
 
 gem 'therubyracer'
 
@@ -74,7 +88,7 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'bootstrap_form'
 
-===Debugging and TDD with:
+=====Debugging and TDD with:
 
 gem 'cucumber-rails'
 
@@ -90,4 +104,17 @@ gem 'launchy'
 
 gem 'database_cleaner'
 
+====Notes from WeGotCoders:
+http://dan-mi-sun.github.io/
 
+http://dan-mi-sun.github.io/wegotcoders/why-code-with-we-got-coders/
+
+http://dan-mi-sun.github.io/reflections-on-8-weeks-with-we-got-coders/
+
+
+====Contact
+twitter: @dan_mi_sun
+
+gmail: dan.mi.sun@gmail.com
+
+uk.linkedin.com/in/danielsundigital/
