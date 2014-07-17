@@ -1,6 +1,6 @@
 == We Got Coders Week 11.5-12 Final Project
 
-===The Soul At Work
+===The Soul At Work Escrow Marketplace
 
 ====About 
 This project has been created as part of the We Got Coders training scheme and it demonstrates the skills that I have acquired during my training period.
