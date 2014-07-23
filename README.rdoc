@@ -66,6 +66,10 @@ gem 'balanced'
 
 gem 'twilio-ruby'
 
+=====For Uploading Images 
+
+gem 'carrierwave'
+
 ====Key Gems used:
 
 =====For registrations:
